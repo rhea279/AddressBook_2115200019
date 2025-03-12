@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-
 namespace ModelLayer.Model
 {
     public class AddressBookEntry
@@ -23,11 +22,5 @@ namespace ModelLayer.Model
         [MaxLength(500)]
         public string? Address { get; set; }
 
-        // Foreign key linking to User
-        [Required]
-        public int UserId { get; set; }
-
-        [ForeignKey("UserId")]
-        public User User { get; set; }
     }
 }

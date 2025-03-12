@@ -162,3 +162,15 @@ C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication
 C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\obj\Debug\net6.0\AddressBookApplication.pdb
 C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\obj\Debug\net6.0\AddressBookApplication.genruntimeconfig.cache
 C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\obj\Debug\net6.0\ref\AddressBookApplication.dll
+C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\System.Web.Http.dll
+C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\System.Web.Http.WebHost.dll
+C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
+C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\Swashbuckle.Core.dll
+C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\WebActivatorEx.dll
+C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\obj\Debug\net6.0\AddressBookApplication.MvcApplicationPartsAssemblyInfo.cs
