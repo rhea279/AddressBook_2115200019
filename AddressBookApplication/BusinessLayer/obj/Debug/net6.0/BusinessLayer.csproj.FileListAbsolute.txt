@@ -34,3 +34,5 @@ C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\BusinessLayer\obj\Debu
 C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\BusinessLayer\obj\Debug\net6.0\refint\BusinessLayer.dll
 C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\BusinessLayer\obj\Debug\net6.0\BusinessLayer.pdb
 C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\BusinessLayer\obj\Debug\net6.0\ref\BusinessLayer.dll
+C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\BusinessLayer\bin\Debug\net6.0\Middleware.dll
+C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\BusinessLayer\bin\Debug\net6.0\Middleware.pdb

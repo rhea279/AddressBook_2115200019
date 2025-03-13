@@ -179,3 +179,6 @@ C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication
 C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\FluentValidation.dll
 C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
 C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\Middleware.dll
+C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\Middleware.pdb
+C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

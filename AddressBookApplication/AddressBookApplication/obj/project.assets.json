@@ -144,6 +144,25 @@
           }
         }
       },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.36": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.35.0"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
@@ -1065,14 +1084,36 @@
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "FluentValidation.AspNetCore": "11.3.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.36",
+          "Microsoft.IdentityModel.Tokens": "6.36.0",
+          "Middleware": "1.0.0",
           "ModelLayer": "1.0.0",
-          "RepositoryLayer": "1.0.0"
+          "RepositoryLayer": "1.0.0",
+          "System.IdentityModel.Tokens.Jwt": "6.36.0"
         },
         "compile": {
           "bin/placeholder/BusinessLayer.dll": {}
         },
         "runtime": {
           "bin/placeholder/BusinessLayer.dll": {}
+        }
+      },
+      "Middleware/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.36",
+          "Microsoft.EntityFrameworkCore": "6.0.36",
+          "Microsoft.IdentityModel.Tokens": "6.36.0",
+          "ModelLayer": "1.0.0",
+          "RepositoryLayer": "1.0.0",
+          "System.IdentityModel.Tokens.Jwt": "6.36.0"
+        },
+        "compile": {
+          "bin/placeholder/Middleware.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Middleware.dll": {}
         }
       },
       "ModelLayer/1.0.0": {
@@ -1248,6 +1289,21 @@
         "lib/net40/System.Web.Http.WebHost.xml",
         "microsoft.aspnet.webapi.webhost.4.0.20710.nupkg.sha512",
         "microsoft.aspnet.webapi.webhost.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.36": {
+      "sha512": "vGDqvZUehbtKdoUzVO32N0Lxon+1piGO6qFnA8FNXEzWhrLN5uum8ZyhWgrWYSA4b6JuCBJ/wAC7rV38wBvLew==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/6.0.36",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
+        "lib/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
+        "microsoft.aspnetcore.authentication.jwtbearer.6.0.36.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
     "Microsoft.CSharp/4.7.0": {
@@ -2914,6 +2970,11 @@
       "type": "project",
       "path": "../BusinessLayer/BusinessLayer.csproj",
       "msbuildProject": "../BusinessLayer/BusinessLayer.csproj"
+    },
+    "Middleware/1.0.0": {
+      "type": "project",
+      "path": "../Middleware/Middleware.csproj",
+      "msbuildProject": "../Middleware/Middleware.csproj"
     },
     "ModelLayer/1.0.0": {
       "type": "project",
