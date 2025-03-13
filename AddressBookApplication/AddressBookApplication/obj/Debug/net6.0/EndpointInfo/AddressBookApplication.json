@@ -24,17 +24,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AddressBookEntry"
+                "$ref": "#/components/schemas/AddressBookDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AddressBookEntry"
+                "$ref": "#/components/schemas/AddressBookDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AddressBookEntry"
+                "$ref": "#/components/schemas/AddressBookDTO"
               }
             }
           }
@@ -87,17 +87,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AddressBookEntry"
+                "$ref": "#/components/schemas/AddressBookDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AddressBookEntry"
+                "$ref": "#/components/schemas/AddressBookDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AddressBookEntry"
+                "$ref": "#/components/schemas/AddressBookDTO"
               }
             }
           }
@@ -133,11 +133,7 @@
   },
   "components": {
     "schemas": {
-      "AddressBookEntry": {
-        "required": [
-          "name",
-          "phoneNumber"
-        ],
+      "AddressBookDTO": {
         "type": "object",
         "properties": {
           "id": {
@@ -145,22 +141,18 @@
             "format": "int32"
           },
           "name": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "phoneNumber": {
-            "minLength": 1,
             "type": "string",
-            "format": "tel"
+            "nullable": true
           },
           "email": {
             "type": "string",
-            "format": "email",
             "nullable": true
           },
           "address": {
-            "maxLength": 500,
             "type": "string",
             "nullable": true
           }

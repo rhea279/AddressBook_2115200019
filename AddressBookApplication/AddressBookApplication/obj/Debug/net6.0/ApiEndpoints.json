@@ -18,8 +18,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "contact",
-        "Type": "ModelLayer.Model.AddressBookEntry",
+        "Name": "contactDto",
+        "Type": "ModelLayer.DTO.AddressBookDTO",
         "IsRequired": true
       }
     ],
@@ -55,8 +55,8 @@
         "IsRequired": true
       },
       {
-        "Name": "contact",
-        "Type": "ModelLayer.Model.AddressBookEntry",
+        "Name": "contactDto",
+        "Type": "ModelLayer.DTO.AddressBookDTO",
         "IsRequired": true
       }
     ],
