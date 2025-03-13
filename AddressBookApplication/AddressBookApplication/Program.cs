@@ -8,6 +8,7 @@ using ModelLayer.DTO;
 using RepositoryLayer.Context;
 using RepositoryLayer.Interface;
 using RepositoryLayer.Service;
+using Middleware.JWT_Token;
 var builder = WebApplication.CreateBuilder(args);
 
 // Ensure Configuration is available
@@ -16,6 +17,13 @@ var configuration = builder.Configuration;
 // Configure Dependency Injection for Database Services BEFORE building the app
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
+// Configure JWT Secret Key
+string secretKey = builder.Configuration["Jwt:SecretKey"];
+builder.Services.AddSingleton(new JwtService(secretKey));
+
+// Register Auth Service
+builder.Services.AddScoped<AuthService>();
 
 builder.Services.AddScoped<IAddressBookBL, AddressBookBL>();
 builder.Services.AddScoped<IAddressBookRL, AddressBookRL>();

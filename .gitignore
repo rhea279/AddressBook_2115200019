@@ -1,4 +1,33 @@
+# Visual Studio & Build-related files
 .vs/
+*.suo
+*.vscode/
+*.nuget.cache
+*.csproj.user
+*.csproj.AssemblyReference.cache
+*.csproj.FileListAbsolute.txt
+*.csproj.CoreCompileInputs.cache
+*.csproj.Up2Date
+*.csproj.BuildWithSkipAnalyzers
+*.csproj.nuget.dgspec.json
+
+# Build Output
 bin/
 obj/
-**/obj/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.deps.json
+*.nuget.cache
+*.sourcelink.json
+
+# App Config (Sensitive Data)
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+# Logs & Temp Files
+*.log
+*.tmp
+*.bak
