@@ -5,8 +5,8 @@ namespace RepositoryLayer.Interface
     {
         Task<IEnumerable<AddressBookEntry>> GetAllContacts();
         Task<AddressBookEntry> GetContactById( int id );
-        Task AddContact(AddressBookEntry contact);
+        Task<AddressBookEntry> AddContact(AddressBookEntry contact);
         Task UpdateContact(AddressBookEntry contact);
-        Task DeleteContact(int id);
+        Task<bool> DeleteContact(int id);
     }
 }
