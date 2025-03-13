@@ -1,4 +1,4 @@
-using AutoMapper;
+﻿using AutoMapper;
 using BusinessLayer.Interface;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
@@ -50,21 +50,22 @@ namespace AddressBookApplication.Controllers
                 return BadRequest(validationResult.Errors);
             }
 
-            
-            var contact = _mapper.Map<AddressBookEntry>(contactDto);
-            await _addressBookBL.AddContact(contact);
+            var createdContact = await _addressBookBL.AddContact(contactDto); // ✅ Pass DTO directly
+            if (createdContact == null)
+            {
+                return StatusCode(500, new { Message = "Error creating contact" }); // Handle errors
+            }
 
-            
-            var createdDto = _mapper.Map<AddressBookDTO>(contact);
-            return CreatedAtAction(nameof(GetContactById), new { id = createdDto.Id }, createdDto);
+            return CreatedAtAction(nameof(GetContactById), new { id = createdContact.Id }, createdContact);
         }
+
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateContact(int id, [FromBody] AddressBookDTO contactDto)
         {
             if (id != contactDto.Id)
             {
-                return BadRequest("ID mismatch");
+                return BadRequest(new { Message = "ID mismatch" });
             }
 
             var validationResult = await _validator.ValidateAsync(contactDto);
@@ -73,17 +74,28 @@ namespace AddressBookApplication.Controllers
                 return BadRequest(validationResult.Errors);
             }
 
-            var contact = _mapper.Map<AddressBookEntry>(contactDto);
-            await _addressBookBL.UpdateContact(contact);
+            bool isUpdated = await _addressBookBL.UpdateContact(contactDto);
 
-            return NoContent();
+            if (!isUpdated)
+            {
+                return NotFound(new { Message = "Contact not found" }); 
+            }
+
+            return Ok(new { Message = "Contact updated successfully" });
         }
+
+
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteContact(int id)
         {
-            await _addressBookBL.DeleteContact(id);
-            return NoContent();
+            bool isDeleted = await _addressBookBL.DeleteContact(id);
+            if (!isDeleted)
+            {
+                return NotFound(new { Message = "Contact not found" }); // 404 response
+            }
+            return Ok(new { Message = "Contact deleted successfully" });
         }
+
     }
 }
