@@ -1,6 +1,10 @@
 using BusinessLayer.Interface;
 using BusinessLayer.Service;
+using BusinessLayer.Mapping;
+using BusinessLayer.Validator;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using ModelLayer.DTO;
 using RepositoryLayer.Context;
 using RepositoryLayer.Interface;
 using RepositoryLayer.Service;
@@ -15,6 +19,14 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddScoped<IAddressBookBL, AddressBookBL>();
 builder.Services.AddScoped<IAddressBookRL, AddressBookRL>();
+builder.Services.AddScoped<IValidator<AddressBookDTO>, AddressBookValidator>();
+
+//Register AutoMapper
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+//Register FluentValidation
+builder.Services.AddValidatorsFromAssemblyContaining<AddressBookValidator>();
+
 // Add services to the container.
 
 builder.Services.AddControllers();
