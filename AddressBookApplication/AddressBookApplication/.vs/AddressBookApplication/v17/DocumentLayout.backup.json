@@ -7,11 +7,27 @@
       "RelativeMoniker": "D:0:0:{E9167471-5C52-4BE8-8BD9-1A7F3697B6C2}|AddressBookApplication.csproj|solutionrelative:controllers\\userauthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A01AB672-F7DA-456C-97A7-07FBCBC46E07}|..\\BusinessLayer\\BusinessLayer.csproj|c:\\users\\asus\\onedrive\\desktop\\git\\addressbookapplication\\businesslayer\\service\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A01AB672-F7DA-456C-97A7-07FBCBC46E07}|..\\BusinessLayer\\BusinessLayer.csproj|c:\\users\\asus\\onedrive\\desktop\\git\\addressbookapplication\\businesslayer\\service\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A01AB672-F7DA-456C-97A7-07FBCBC46E07}|..\\BusinessLayer\\BusinessLayer.csproj|c:\\users\\asus\\onedrive\\desktop\\git\\addressbookapplication\\businesslayer\\interface\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9167471-5C52-4BE8-8BD9-1A7F3697B6C2}|AddressBookApplication.csproj|c:\\users\\asus\\onedrive\\desktop\\git\\addressbookapplication\\addressbookapplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9167471-5C52-4BE8-8BD9-1A7F3697B6C2}|AddressBookApplication.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E9167471-5C52-4BE8-8BD9-1A7F3697B6C2}|AddressBookApplication.csproj|c:\\users\\asus\\onedrive\\desktop\\git\\addressbookapplication\\addressbookapplication\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{E9167471-5C52-4BE8-8BD9-1A7F3697B6C2}|AddressBookApplication.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA2559AD-E230-4562-9497-A26EF36AEF8F}|..\\RepositoryLayer\\RepositoryLayer.csproj|c:\\users\\asus\\onedrive\\desktop\\git\\addressbookapplication\\repositorylayer\\migrations\\20250314181909_addresettoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58F7F220-D133-47B5-9594-1B5C38E8266B}|..\\ModelLayer\\ModelLayer.csproj|c:\\users\\asus\\onedrive\\desktop\\git\\addressbookapplication\\modellayer\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BC49DB1-9C3B-43F0-BF6B-1DBAD257D3C2}|..\\Middleware\\Middleware.csproj|c:\\users\\asus\\onedrive\\desktop\\git\\addressbookapplication\\middleware\\hashing\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A01AB672-F7DA-456C-97A7-07FBCBC46E07}|..\\BusinessLayer\\BusinessLayer.csproj|c:\\users\\asus\\onedrive\\desktop\\git\\addressbookapplication\\businesslayer\\businesslayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
@@ -20,17 +36,10 @@
       "AbsoluteMoniker": "D:0:0:{EA2559AD-E230-4562-9497-A26EF36AEF8F}|..\\RepositoryLayer\\RepositoryLayer.csproj|c:\\users\\asus\\onedrive\\desktop\\git\\addressbookapplication\\repositorylayer\\migrations\\20250313212507_addusertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9167471-5C52-4BE8-8BD9-1A7F3697B6C2}|AddressBookApplication.csproj|c:\\users\\asus\\onedrive\\desktop\\git\\addressbookapplication\\addressbookapplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9167471-5C52-4BE8-8BD9-1A7F3697B6C2}|AddressBookApplication.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{58F7F220-D133-47B5-9594-1B5C38E8266B}|..\\ModelLayer\\ModelLayer.csproj|c:\\users\\asus\\onedrive\\desktop\\git\\addressbookapplication\\modellayer\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1BC49DB1-9C3B-43F0-BF6B-1DBAD257D3C2}|..\\Middleware\\Middleware.csproj|c:\\users\\asus\\onedrive\\desktop\\git\\addressbookapplication\\middleware\\jwt token\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1BC49DB1-9C3B-43F0-BF6B-1DBAD257D3C2}|..\\Middleware\\Middleware.csproj|c:\\users\\asus\\onedrive\\desktop\\git\\addressbookapplication\\middleware\\hashing\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EA2559AD-E230-4562-9497-A26EF36AEF8F}|..\\RepositoryLayer\\RepositoryLayer.csproj|c:\\users\\asus\\onedrive\\desktop\\git\\addressbookapplication\\repositorylayer\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -50,32 +59,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\AddressBookApplication\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\AddressBookApplication\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-13T21:22:40.828Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\BusinessLayer\\Service\\AuthService.cs",
-              "RelativeDocumentMoniker": "..\\BusinessLayer\\Service\\AuthService.cs",
-              "ToolTip": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\BusinessLayer\\Service\\AuthService.cs",
-              "RelativeToolTip": "..\\BusinessLayer\\Service\\AuthService.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAYwDkAAAAJAAAAAAAAAA==",
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\BusinessLayer\\Service\\EmailService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLayer\\Service\\EmailService.cs",
+              "ToolTip": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\BusinessLayer\\Service\\EmailService.cs",
+              "RelativeToolTip": "..\\BusinessLayer\\Service\\EmailService.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAgwCEAAAB5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T21:17:00.408Z",
+              "WhenOpened": "2025-03-14T17:55:40.432Z",
               "EditorCaption": ""
             },
             {
@@ -86,27 +82,104 @@
               "RelativeDocumentMoniker": "Controllers\\UserAuthController.cs",
               "ToolTip": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\AddressBookApplication\\Controllers\\UserAuthController.cs*",
               "RelativeToolTip": "Controllers\\UserAuthController.cs*",
-              "ViewState": "AgIAABUAAAAAAAAAAAAYwCIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAIA8wD8AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-13T21:21:41.703Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IEmailService.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\BusinessLayer\\Interface\\IEmailService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLayer\\Interface\\IEmailService.cs",
+              "ToolTip": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\BusinessLayer\\Interface\\IEmailService.cs",
+              "RelativeToolTip": "..\\BusinessLayer\\Interface\\IEmailService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T17:56:14.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "BusinessLayer",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\AddressBookApplication\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\AddressBookApplication\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T19:07:28.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\AddressBookApplication\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\AddressBookApplication\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-13T21:22:40.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "20250314181909_AddResetToken.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\RepositoryLayer\\Migrations\\20250314181909_AddResetToken.cs",
+              "RelativeDocumentMoniker": "..\\RepositoryLayer\\Migrations\\20250314181909_AddResetToken.cs",
+              "ToolTip": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\RepositoryLayer\\Migrations\\20250314181909_AddResetToken.cs",
+              "RelativeToolTip": "..\\RepositoryLayer\\Migrations\\20250314181909_AddResetToken.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T18:19:10.268Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\ModelLayer\\Model\\User.cs",
+              "RelativeDocumentMoniker": "..\\ModelLayer\\Model\\User.cs",
+              "ToolTip": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\ModelLayer\\Model\\User.cs",
+              "RelativeToolTip": "..\\ModelLayer\\Model\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T18:15:37.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PasswordHasher.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\Middleware\\Hashing\\PasswordHasher.cs",
+              "RelativeDocumentMoniker": "..\\Middleware\\Hashing\\PasswordHasher.cs",
+              "ToolTip": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\Middleware\\Hashing\\PasswordHasher.cs",
+              "RelativeToolTip": "..\\Middleware\\Hashing\\PasswordHasher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T21:03:13.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BusinessLayer.csproj",
               "DocumentMoniker": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\BusinessLayer\\BusinessLayer.csproj",
               "RelativeDocumentMoniker": "..\\BusinessLayer\\BusinessLayer.csproj",
               "ToolTip": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\BusinessLayer\\BusinessLayer.csproj",
               "RelativeToolTip": "..\\BusinessLayer\\BusinessLayer.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-13T21:35:21.959Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T21:35:21.959Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "20250313212507_AddUserTable.cs",
               "DocumentMoniker": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\RepositoryLayer\\Migrations\\20250313212507_AddUserTable.cs",
               "RelativeDocumentMoniker": "..\\RepositoryLayer\\Migrations\\20250313212507_AddUserTable.cs",
@@ -114,12 +187,11 @@
               "RelativeToolTip": "..\\RepositoryLayer\\Migrations\\20250313212507_AddUserTable.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAQwA8AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T21:25:08.214Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T21:25:08.214Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "JwtService.cs",
               "DocumentMoniker": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\Middleware\\JWT Token\\JwtService.cs",
               "RelativeDocumentMoniker": "..\\Middleware\\JWT Token\\JwtService.cs",
@@ -127,12 +199,11 @@
               "RelativeToolTip": "..\\Middleware\\JWT Token\\JwtService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T21:08:37.134Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T21:08:37.134Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "UserDTO.cs",
               "DocumentMoniker": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\ModelLayer\\DTO\\UserDTO.cs",
               "RelativeDocumentMoniker": "..\\ModelLayer\\DTO\\UserDTO.cs",
@@ -140,25 +211,11 @@
               "RelativeToolTip": "..\\ModelLayer\\DTO\\UserDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T20:56:46.613Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T20:56:46.613Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\AddressBookApplication\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\AddressBookApplication\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T19:07:28.115Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\RepositoryLayer\\Context\\AppDbContext.cs",
               "RelativeDocumentMoniker": "..\\RepositoryLayer\\Context\\AppDbContext.cs",
@@ -166,25 +223,11 @@
               "RelativeToolTip": "..\\RepositoryLayer\\Context\\AppDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T21:07:02.817Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T21:07:02.817Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PasswordHasher.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\Middleware\\Hashing\\PasswordHasher.cs",
-              "RelativeDocumentMoniker": "..\\Middleware\\Hashing\\PasswordHasher.cs",
-              "ToolTip": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\Middleware\\Hashing\\PasswordHasher.cs",
-              "RelativeToolTip": "..\\Middleware\\Hashing\\PasswordHasher.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T21:03:13.109Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "AddressBookDTO.cs",
               "DocumentMoniker": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\ModelLayer\\DTO\\AddressBookDTO.cs",
               "RelativeDocumentMoniker": "..\\ModelLayer\\DTO\\AddressBookDTO.cs",
@@ -192,12 +235,11 @@
               "RelativeToolTip": "..\\ModelLayer\\DTO\\AddressBookDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T20:57:25.744Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T20:57:25.744Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "AddressBookController.cs",
               "DocumentMoniker": "C:\\Users\\asus\\OneDrive\\Desktop\\Git\\AddressBookApplication\\AddressBookApplication\\Controllers\\AddressBookController.cs",
               "RelativeDocumentMoniker": "Controllers\\AddressBookController.cs",
@@ -205,8 +247,7 @@
               "RelativeToolTip": "Controllers\\AddressBookController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T17:49:58.183Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-11T17:49:58.183Z"
             }
           ]
         }

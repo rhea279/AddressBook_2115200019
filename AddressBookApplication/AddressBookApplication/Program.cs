@@ -28,6 +28,7 @@ builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<IAddressBookBL, AddressBookBL>();
 builder.Services.AddScoped<IAddressBookRL, AddressBookRL>();
 builder.Services.AddScoped<IValidator<AddressBookDTO>, AddressBookValidator>();
+builder.Services.AddTransient<IEmailService, EmailService>();
 
 //Register AutoMapper
 builder.Services.AddAutoMapper(typeof(MappingProfile));
