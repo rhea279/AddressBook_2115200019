@@ -9,6 +9,9 @@ using RepositoryLayer.Context;
 using RepositoryLayer.Interface;
 using RepositoryLayer.Service;
 using Middleware.JWT_Token;
+using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Caching.StackExchangeRedis;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Ensure Configuration is available
@@ -30,30 +33,43 @@ builder.Services.AddScoped<IAddressBookRL, AddressBookRL>();
 builder.Services.AddScoped<IValidator<AddressBookDTO>, AddressBookValidator>();
 builder.Services.AddTransient<IEmailService, EmailService>();
 
-//Register AutoMapper
+// Register AutoMapper
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
-//Register FluentValidation
+// Register FluentValidation
 builder.Services.AddValidatorsFromAssemblyContaining<AddressBookValidator>();
 
-// Add services to the container.
+// Add Redis cache service
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = builder.Configuration["Redis:ConnectionString"];
+});
 
+// Enable Session Middleware
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
+// Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
 // Configure Middleware
 app.UseSwagger();
 app.UseSwaggerUI();
 
-
 // Configure the HTTP request pipeline.
-
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
+app.UseSession(); 
 
+app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
