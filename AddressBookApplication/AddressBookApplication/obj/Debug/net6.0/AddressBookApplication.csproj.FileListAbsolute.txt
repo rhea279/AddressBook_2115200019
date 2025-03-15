@@ -182,3 +182,7 @@ C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication
 C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\Middleware.dll
 C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\Middleware.pdb
 C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\StackExchange.Redis.dll
