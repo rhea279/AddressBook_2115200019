@@ -1,7 +1,9 @@
 # Visual Studio & Build-related files
 .vs/
+.vscode/
 *.suo
-*.vscode/
+*.user
+*.cache
 *.nuget.cache
 *.csproj.user
 *.csproj.AssemblyReference.cache
@@ -17,10 +19,14 @@ obj/
 *.dll
 *.exe
 *.pdb
-*.cache
 *.deps.json
-*.nuget.cache
 *.sourcelink.json
+
+# NuGet Packages
+*.nupkg
+packages/
+project.lock.json
+project.assets.json
 
 # App Config (Sensitive Data)
 appsettings.Development.json
@@ -31,3 +37,17 @@ secrets.json
 *.log
 *.tmp
 *.bak
+
+# Entity Framework Migrations
+Migrations/
+
+# Rider & JetBrains
+.idea/
+*.sln.iml
+
+# Resharper
+*.DotSettings.user
+
+# MacOS & Linux
+.DS_Store
+*.swp
