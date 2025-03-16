@@ -51,3 +51,5 @@ Migrations/
 # MacOS & Linux
 .DS_Store
 *.swp
+"AddressBookApplication/**/bin/" 
+"AddressBookApplication/**/obj/" 

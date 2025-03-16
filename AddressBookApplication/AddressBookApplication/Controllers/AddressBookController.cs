@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using ModelLayer.DTO;
 using ModelLayer.Model;
 using Swashbuckle.AspNetCore.Annotations;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace AddressBookApplication.Controllers
@@ -29,6 +30,7 @@ namespace AddressBookApplication.Controllers
             _rabbitMQProducer = rabbitMQProducer;
         }
 
+        [Authorize]
         [HttpGet]
         [SwaggerOperation(Summary = "Retrieve All Contacts")]
         public async Task<IActionResult> GetAllContacts()
@@ -38,6 +40,7 @@ namespace AddressBookApplication.Controllers
             return Ok(contactDtos);
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         [SwaggerOperation(Summary = "Retrieve A Contact By Id")]
         public async Task<IActionResult> GetContactById(int id)
@@ -51,6 +54,7 @@ namespace AddressBookApplication.Controllers
             return Ok(contactDto);
         }
 
+        [Authorize]
         [HttpPost]
         [SwaggerOperation(Summary = "Add New Contact")]
         public async Task<IActionResult> AddContact([FromBody] AddressBookDTO contactDto)
@@ -110,6 +114,7 @@ namespace AddressBookApplication.Controllers
 >>>>>>> 2UC2
         }
 
+        [Authorize]
         [HttpPut("{id}")]
         [SwaggerOperation(Summary = "Update A Contact")]
         public async Task<IActionResult> UpdateContact(int id, [FromBody] AddressBookDTO contactDto)
@@ -137,7 +142,7 @@ namespace AddressBookApplication.Controllers
             return Ok(new { Message = "Contact updated successfully" });
         }
 
-
+        [Authorize]
         [HttpDelete("{id}")]
         [SwaggerOperation(Summary = "Delete A Contact")]
         public async Task<IActionResult> DeleteContact(int id)
