@@ -11,8 +11,15 @@ using RepositoryLayer.Service;
 using Middleware.JWT_Token;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Caching.StackExchangeRedis;
+using Middleware.RabbitMQ;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Host.ConfigureLogging(logging =>
+{
+    logging.ClearProviders(); 
+    logging.AddConsole();      
+});
+
 
 // Ensure Configuration is available
 var configuration = builder.Configuration;
@@ -52,6 +59,9 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
+
+builder.Services.AddSingleton<IRabbitMQProducer, RabbitMQProducer>();
+builder.Services.AddHostedService<RabbitMQConsumer>();
 
 // Add services to the container.
 builder.Services.AddControllers();
