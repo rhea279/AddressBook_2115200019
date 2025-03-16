@@ -16,12 +16,14 @@ namespace AddressBookApplication.Controllers
         private readonly AuthService _authService;
         private readonly IEmailService _emailService;
         private readonly AppDbContext _appDbContext;
+        private readonly RabbitMQProducer _rabbitMQProducer;
 
-        public UserAuthController(AuthService authService, AppDbContext appDbContext,IEmailService emailService)
+        public UserAuthController(AuthService authService, AppDbContext appDbContext,IEmailService emailService, RabbitMQProducer rabbitMQProducer)
         {
             _authService = authService;
             _emailService = emailService;
             _appDbContext = appDbContext;
+            _rabbitMQProducer = rabbitMQProducer;
         }
 
         [HttpPost("register")]
@@ -29,8 +31,18 @@ namespace AddressBookApplication.Controllers
         {
             string result = await _authService.Register(userDto);
             if (result == "User already exists") return Conflict(result);
+
+            // Publish an event to RabbitMQ
+            _rabbitMQProducer.PublishMessage(new
+            {
+                Event = "UserRegistered",
+                Email = userDto.Email,
+                Timestamp = DateTime.UtcNow
+            });
+
             return Ok(result);
         }
+
 
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] UserDTO userDto)
@@ -51,22 +63,17 @@ namespace AddressBookApplication.Controllers
             user.ResetTokenExpiry = DateTime.UtcNow.AddMinutes(10);
             await _appDbContext.SaveChangesAsync();
 
-            // Construct Reset Link
-            var resetLink = $"{Request.Scheme}://{Request.Host}/reset-password?token={user.ResetToken}";
-
-            // Log the reset token for debugging
-            Console.WriteLine($"Reset Token: {user.ResetToken}");
-
-            // Send Email
-            await _emailService.SendEmail(
-                 user.Email,
-    "Password Reset",
-    $"<h3>Reset Your Password</h3>" +
-    $"<p>Your Reset Token: <strong>{user.ResetToken}</strong></p>"
-            );
+            // Send event to RabbitMQ
+            _rabbitMQProducer.PublishMessage(new
+            {
+                Event = "PasswordResetRequested",
+                Email = user.Email,
+                Timestamp = DateTime.UtcNow
+            });
 
             return Ok("Reset password email sent.");
         }
+
 
         [HttpPost("reset-password")]
         public async Task<IActionResult> ResetPassword(ResetPasswordDTO request)

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using ModelLayer.DTO;
 using ModelLayer.Model;
 
+
 namespace AddressBookApplication.Controllers
 {
     [ApiController]
@@ -14,11 +15,13 @@ namespace AddressBookApplication.Controllers
         private readonly IAddressBookBL _addressBookBL;
         private readonly IMapper _mapper;
         private readonly IValidator<AddressBookDTO> _validator;
-        public AddressBookController(IAddressBookBL addressBookBL, IMapper mapper, IValidator<AddressBookDTO> validator)
+        private readonly IRabbitMQProducer _rabbitMQProducer;
+        public AddressBookController(IAddressBookBL addressBookBL, IMapper mapper, IValidator<AddressBookDTO> validator, IRabbitMQProducer rabbitMQProducer)
         {
             _addressBookBL = addressBookBL;
             _validator = validator;
             _mapper = mapper;
+            _rabbitMQProducer = rabbitMQProducer;
         }
 
         [HttpGet]
@@ -50,15 +53,17 @@ namespace AddressBookApplication.Controllers
                 return BadRequest(validationResult.Errors);
             }
 
-            var createdContact = await _addressBookBL.AddContact(contactDto); // ✅ Pass DTO directly
+            var createdContact = await _addressBookBL.AddContact(contactDto);
             if (createdContact == null)
             {
-                return StatusCode(500, new { Message = "Error creating contact" }); // Handle errors
+                return StatusCode(500, new { Message = "Error creating contact" });
             }
+
+            // Publish message to RabbitMQ
+            _rabbitMQProducer.PublishMessage(new { Action = "Create", Data = createdContact });
 
             return CreatedAtAction(nameof(GetContactById), new { id = createdContact.Id }, createdContact);
         }
-
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateContact(int id, [FromBody] AddressBookDTO contactDto)
@@ -75,15 +80,16 @@ namespace AddressBookApplication.Controllers
             }
 
             bool isUpdated = await _addressBookBL.UpdateContact(contactDto);
-
             if (!isUpdated)
             {
-                return NotFound(new { Message = "Contact not found" }); 
+                return NotFound(new { Message = "Contact not found" });
             }
+
+            // Publish update message to RabbitMQ
+            _rabbitMQProducer.PublishMessage(new { Action = "Update", Data = contactDto });
 
             return Ok(new { Message = "Contact updated successfully" });
         }
-
 
 
         [HttpDelete("{id}")]
@@ -92,8 +98,12 @@ namespace AddressBookApplication.Controllers
             bool isDeleted = await _addressBookBL.DeleteContact(id);
             if (!isDeleted)
             {
-                return NotFound(new { Message = "Contact not found" }); // 404 response
+                return NotFound(new { Message = "Contact not found" });
             }
+
+            // Publish delete message to RabbitMQ
+            _rabbitMQProducer.PublishMessage(new { Action = "Delete", Id = id });
+
             return Ok(new { Message = "Contact deleted successfully" });
         }
 
