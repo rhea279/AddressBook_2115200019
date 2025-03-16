@@ -1,8 +1,9 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "AddressBookApplication",
-    "version": "1.0"
+    "title": "Address Book API",
+    "description": "API for managing contacts in the Address Book",
+    "version": "v1"
   },
   "paths": {
     "/AddressBook": {
@@ -10,6 +11,7 @@
         "tags": [
           "AddressBook"
         ],
+        "summary": "Retrieve All Contacts",
         "responses": {
           "200": {
             "description": "Success"
@@ -20,6 +22,7 @@
         "tags": [
           "AddressBook"
         ],
+        "summary": "Add New Contact",
         "requestBody": {
           "content": {
             "application/json": {
@@ -51,6 +54,7 @@
         "tags": [
           "AddressBook"
         ],
+        "summary": "Retrieve A Contact By Id",
         "parameters": [
           {
             "name": "id",
@@ -72,6 +76,7 @@
         "tags": [
           "AddressBook"
         ],
+        "summary": "Update A Contact",
         "parameters": [
           {
             "name": "id",
@@ -112,6 +117,7 @@
         "tags": [
           "AddressBook"
         ],
+        "summary": "Delete A Contact",
         "parameters": [
           {
             "name": "id",
@@ -135,6 +141,7 @@
         "tags": [
           "UserAuth"
         ],
+        "description": "Register User",
         "requestBody": {
           "content": {
             "application/json": {
@@ -166,6 +173,7 @@
         "tags": [
           "UserAuth"
         ],
+        "summary": "Login User",
         "requestBody": {
           "content": {
             "application/json": {
@@ -197,6 +205,7 @@
         "tags": [
           "UserAuth"
         ],
+        "summary": "Forget Password",
         "requestBody": {
           "content": {
             "application/json": {
@@ -228,6 +237,7 @@
         "tags": [
           "UserAuth"
         ],
+        "summary": "Reset Password",
         "requestBody": {
           "content": {
             "application/json": {

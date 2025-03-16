@@ -214,3 +214,4 @@ C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication
 C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\System.Text.Json.dll
 C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\System.Threading.Channels.dll
 C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\libman.json
+C:\Users\asus\OneDrive\Desktop\Git\AddressBookApplication\AddressBookApplication\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll

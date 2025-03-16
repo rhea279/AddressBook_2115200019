@@ -6,6 +6,7 @@ using RepositoryLayer.Context;
 using Middleware.Hashing;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace AddressBookApplication.Controllers
 {
@@ -27,6 +28,7 @@ namespace AddressBookApplication.Controllers
         }
 
         [HttpPost("register")]
+        [SwaggerOperation(Summary = "Register User")]
         public async Task<IActionResult> Register([FromBody] UserDTO userDto)
         {
             string result = await _authService.Register(userDto);
@@ -45,6 +47,7 @@ namespace AddressBookApplication.Controllers
 
 
         [HttpPost("login")]
+        [SwaggerOperation(Summary = "Login User")]
         public async Task<IActionResult> Login([FromBody] UserDTO userDto)
         {
             object? token = await _authService.Login(userDto);
@@ -53,6 +56,7 @@ namespace AddressBookApplication.Controllers
         }
 
         [HttpPost("forgot-password")]
+        [SwaggerOperation(Summary = "Forget Password")]
         public async Task<IActionResult> ForgotPassword(ForgetPasswordDTO request)
         {
             var user = await _appDbContext.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
@@ -76,6 +80,7 @@ namespace AddressBookApplication.Controllers
 
 
         [HttpPost("reset-password")]
+        [SwaggerOperation(Summary = "Reset Password")]
         public async Task<IActionResult> ResetPassword(ResetPasswordDTO request)
         {
             var user = await _appDbContext.Users.FirstOrDefaultAsync(u => u.ResetToken == request.Token);

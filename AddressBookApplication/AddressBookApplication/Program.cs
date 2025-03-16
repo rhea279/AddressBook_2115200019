@@ -12,6 +12,7 @@ using Middleware.JWT_Token;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Caching.StackExchangeRedis;
 using Middleware.RabbitMQ;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Host.ConfigureLogging(logging =>
@@ -65,14 +66,30 @@ builder.Services.AddHostedService<RabbitMQConsumer>();
 
 // Add services to the container.
 builder.Services.AddControllers();
+
+// Register Swagger services
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Address Book API",
+        Version = "v1",
+        Description = "API for managing contacts in the Address Book",
+    });
+    c.EnableAnnotations();
+});
 
 var app = builder.Build();
 
-// Configure Middleware
-app.UseSwagger();
-app.UseSwaggerUI();
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Address Book API v1");
+    });
+}
 
 // Configure the HTTP request pipeline.
 app.UseHttpsRedirection();
