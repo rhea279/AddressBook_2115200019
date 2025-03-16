@@ -141,7 +141,7 @@
         "tags": [
           "UserAuth"
         ],
-        "description": "Register User",
+        "summary": "Register User",
         "requestBody": {
           "content": {
             "application/json": {
@@ -225,6 +225,19 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/auth/profile": {
+      "get": {
+        "tags": [
+          "UserAuth"
+        ],
+        "summary": "Get Logged-in User Profile",
         "responses": {
           "200": {
             "description": "Success"
@@ -343,6 +356,19 @@
         },
         "additionalProperties": false
       }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Enter 'Bearer' [space] and then your valid JWT token.",
+        "scheme": "Bearer",
+        "bearerFormat": "JWT"
+      }
     }
-  }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
 }

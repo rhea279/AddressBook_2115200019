@@ -13,6 +13,9 @@ using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Caching.StackExchangeRedis;
 using Middleware.RabbitMQ;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Host.ConfigureLogging(logging =>
@@ -32,6 +35,23 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // Configure JWT Secret Key
 string secretKey = builder.Configuration["Jwt:SecretKey"];
 builder.Services.AddSingleton(new JwtService(secretKey));
+
+// Configure JWT Authentication
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.RequireHttpsMetadata = false;
+        options.SaveToken = true;
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:SecretKey"])),
+            ValidateIssuer = false,
+            ValidateAudience = false
+        };
+    });
+
+builder.Services.AddAuthorization();
 
 // Register Auth Service
 builder.Services.AddScoped<AuthService>();
@@ -61,7 +81,12 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
-builder.Services.AddSingleton<IRabbitMQProducer, RabbitMQProducer>();
+builder.Services.AddSingleton<IRabbitMQProducer, RabbitMQProducer>(provider =>
+{
+    var config = provider.GetRequiredService<IConfiguration>();
+    return new RabbitMQProducer(config);
+});
+
 builder.Services.AddHostedService<RabbitMQConsumer>();
 
 // Add services to the container.
@@ -77,8 +102,34 @@ builder.Services.AddSwaggerGen(c =>
         Version = "v1",
         Description = "API for managing contacts in the Address Book",
     });
+
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "Enter 'Bearer' [space] and then your valid JWT token."
+    });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new List<string>()
+        }
+    });
     c.EnableAnnotations();
 });
+
 
 var app = builder.Build();
 
@@ -94,8 +145,8 @@ if (app.Environment.IsDevelopment())
 // Configure the HTTP request pipeline.
 app.UseHttpsRedirection();
 
-app.UseSession(); 
-
+app.UseSession();
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 

@@ -7,6 +7,9 @@ using Middleware.Hashing;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
 using Swashbuckle.AspNetCore.Annotations;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace AddressBookApplication.Controllers
 {
@@ -17,15 +20,16 @@ namespace AddressBookApplication.Controllers
         private readonly AuthService _authService;
         private readonly IEmailService _emailService;
         private readonly AppDbContext _appDbContext;
-        private readonly RabbitMQProducer _rabbitMQProducer;
+        private readonly IRabbitMQProducer _rabbitMQProducer;
 
-        public UserAuthController(AuthService authService, AppDbContext appDbContext,IEmailService emailService, RabbitMQProducer rabbitMQProducer)
+        public UserAuthController(AuthService authService, AppDbContext appDbContext,IEmailService emailService, IRabbitMQProducer rabbitMQProducer)
         {
             _authService = authService;
             _emailService = emailService;
             _appDbContext = appDbContext;
             _rabbitMQProducer = rabbitMQProducer;
         }
+
 
         [HttpPost("register")]
         [SwaggerOperation(Summary = "Register User")]
@@ -77,6 +81,40 @@ namespace AddressBookApplication.Controllers
 
             return Ok("Reset password email sent.");
         }
+        [Authorize]
+        [HttpGet("profile")]
+        [SwaggerOperation(Summary ="Get Logged-in User Profile")]
+        public async Task<IActionResult> GetProfile()
+        {
+            // Get the user's ID from the JWT token
+            var userIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out int userId))
+            {
+                return Unauthorized(new { message = "Invalid Token" });
+            }
+
+            // Fetch user details from the database
+            var user = await _appDbContext.Users
+                .Where(u => u.Id == userId)
+                .Select(u => new
+                {
+                    u.Id,
+                    u.Name,
+                    u.Email
+                   
+                })
+                .FirstOrDefaultAsync();
+
+            if (user == null)
+            {
+                return NotFound(new { message = "User not found" });
+            }
+
+            return Ok(user);
+        }
+
+
 
 
         [HttpPost("reset-password")]
