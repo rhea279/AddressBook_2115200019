@@ -8,6 +8,7 @@ using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer.DTO;
 using ModelLayer.Model;
+using Swashbuckle.AspNetCore.Annotations;
 
 
 namespace AddressBookApplication.Controllers
@@ -29,6 +30,7 @@ namespace AddressBookApplication.Controllers
         }
 
         [HttpGet]
+        [SwaggerOperation(Summary = "Retrieve All Contacts")]
         public async Task<IActionResult> GetAllContacts()
         {
             var contacts= await _addressBookBL.GetAllContacts();
@@ -37,6 +39,7 @@ namespace AddressBookApplication.Controllers
         }
 
         [HttpGet("{id}")]
+        [SwaggerOperation(Summary = "Retrieve A Contact By Id")]
         public async Task<IActionResult> GetContactById(int id)
         {
             var contact = await _addressBookBL.GetContactById(id);
@@ -49,6 +52,7 @@ namespace AddressBookApplication.Controllers
         }
 
         [HttpPost]
+        [SwaggerOperation(Summary = "Add New Contact")]
         public async Task<IActionResult> AddContact([FromBody] AddressBookDTO contactDto)
         {
             var validationResult = await _validator.ValidateAsync(contactDto);
@@ -107,6 +111,7 @@ namespace AddressBookApplication.Controllers
         }
 
         [HttpPut("{id}")]
+        [SwaggerOperation(Summary = "Update A Contact")]
         public async Task<IActionResult> UpdateContact(int id, [FromBody] AddressBookDTO contactDto)
         {
             if (id != contactDto.Id)
@@ -134,6 +139,7 @@ namespace AddressBookApplication.Controllers
 
 
         [HttpDelete("{id}")]
+        [SwaggerOperation(Summary = "Delete A Contact")]
         public async Task<IActionResult> DeleteContact(int id)
         {
             bool isDeleted = await _addressBookBL.DeleteContact(id);
